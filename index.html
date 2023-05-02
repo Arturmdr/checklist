@@ -1,0 +1,2539 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Check List</title>
+
+    <style>
+        .custom-label input:checked+svg[data-v-4a88cc40],
+        .custom-label input:checked+svg[data-v-7f64a58b],
+        .custom-label input:checked+svg[data-v-179f8e9e],
+        .custom-label input:checked+svg[data-v-69152ee1] {
+            display: block !important
+        }
+
+        html {
+            height: 100%
+        }
+
+        body {
+            min-height: 100%;
+            padding: 0;
+            position: relative
+        }
+
+        body:after {
+            content: "";
+            display: block
+        }
+
+        #app {
+            font-family: Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #2c3e50
+        }
+
+        .moving-card {
+            opacity: .5;
+            background: #f7fafc;
+            border: 1px solid #4299e1
+        }
+
+        .toggle__dot {
+            top: -.25rem;
+            left: -.25rem;
+            transition: all .3s ease-in-out
+        }
+
+        input:checked~.toggle__dot {
+            transform: translateX(100%);
+            background-color: #47bb78
+        }
+
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%
+        }
+
+        body {
+            margin: 0
+        }
+
+        a {
+            background-color: transparent
+        }
+
+        strong {
+            font-weight: bolder
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0
+        }
+
+        button,
+        input {
+            overflow: visible
+        }
+
+        button {
+            text-transform: none
+        }
+
+        [type=button],
+        button {
+            -webkit-appearance: button
+        }
+
+        [type=button]::-moz-focus-inner,
+        button::-moz-focus-inner {
+            border-style: none;
+            padding: 0
+        }
+
+        [type=button]:-moz-focusring,
+        button:-moz-focusring {
+            outline: 1px dotted ButtonText
+        }
+
+        textarea {
+            overflow: auto
+        }
+
+        [type=checkbox] {
+            box-sizing: border-box;
+            padding: 0
+        }
+
+        [hidden],
+        template {
+            display: none
+        }
+
+        p {
+            margin: 0
+        }
+
+        button {
+            background-color: transparent;
+            background-image: none;
+            padding: 0
+        }
+
+        button:focus {
+            outline: 1px dotted;
+            outline: 5px auto -webkit-focus-ring-color
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            line-height: 1.5
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e2e8f0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #a0aec0
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        button,
+        input,
+        textarea {
+            padding: 0;
+            line-height: inherit;
+            color: inherit
+        }
+
+        svg {
+            display: block;
+            vertical-align: middle
+        }
+
+        .container {
+            width: 100%
+        }
+
+        @media (min-width:640px) {
+            .container {
+                max-width: 640px
+            }
+        }
+
+        @media (min-width:768px) {
+            .container {
+                max-width: 768px
+            }
+        }
+
+        @media (min-width:1024px) {
+            .container {
+                max-width: 1024px
+            }
+        }
+
+        @media (min-width:1280px) {
+            .container {
+                max-width: 1280px
+            }
+        }
+
+        .bg-white {
+            background-color: #fff
+        }
+
+        .bg-gray-100 {
+            background-color: #6fb751
+        }
+
+        .bg-gray-400 {
+            background-color: #0073bf
+        }
+
+        .bg-red-100 {
+            background-color: #fff5f5
+        }
+
+        .bg-green-500 {
+            background-color: #48bb78
+        }
+
+        .hover\:bg-white:hover {
+            background-color: #fff
+        }
+
+        .border-gray-400 {
+            border-color: #cbd5e0
+        }
+
+        .border-red-400 {
+            border-color: #fc8181
+        }
+
+        .border-green-500 {
+            border-color: #48bb78
+        }
+
+        .rounded-lg {
+            border-radius: .5rem
+        }
+
+        .rounded-full {
+            border-radius: 9999px
+        }
+
+        .border-2 {
+            border-width: 2px
+        }
+
+        .border {
+            border-width: 1px
+        }
+
+        .cursor-pointer {
+            cursor: pointer
+        }
+
+        .cursor-move {
+            cursor: move
+        }
+
+        .block {
+            display: block
+        }
+
+        .inline-block {
+            display: inline-block
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .flex-col {
+            flex-direction: column
+        }
+
+        .items-start {
+            align-items: flex-start
+        }
+
+        .items-center {
+            align-items: center
+        }
+
+        .self-start {
+            align-self: flex-start
+        }
+
+        .self-center {
+            align-self: center
+        }
+
+        .justify-end {
+            justify-content: flex-end
+        }
+
+        .justify-center {
+            justify-content: center
+        }
+
+        .justify-between {
+            justify-content: space-between
+        }
+
+        .flex-1 {
+            flex: 1 1 0%
+        }
+
+        .font-medium {
+            font-weight: 500
+        }
+
+        .font-semibold {
+            font-weight: 600
+        }
+
+        .h-4 {
+            height: 1rem
+        }
+
+        .h-6 {
+            height: 1.5rem
+        }
+
+        .h-screen {
+            height: 100vh
+        }
+
+        .text-sm {
+            font-size: .875rem
+        }
+
+        .text-xl {
+            font-size: 1.25rem
+        }
+
+        .text-2xl {
+            font-size: 1.5rem
+        }
+
+        .text-3xl {
+            font-size: 1.875rem
+        }
+
+        .text-5xl {
+            font-size: 3rem
+        }
+
+        .leading-none {
+            line-height: 1
+        }
+
+        .m-1 {
+            margin: .25rem
+        }
+
+        .mx-1 {
+            margin-left: .25rem;
+            margin-right: .25rem
+        }
+
+        .mx-2 {
+            margin-left: .5rem;
+            margin-right: .5rem
+        }
+
+        .my-20 {
+            margin-top: 5rem;
+            margin-bottom: 5rem
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .mt-0 {
+            margin-top: 0
+        }
+
+        .mt-2 {
+            margin-top: .5rem
+        }
+
+        .mr-2 {
+            margin-right: .5rem
+        }
+
+        .mb-2 {
+            margin-bottom: .5rem
+        }
+
+        .ml-2 {
+            margin-left: .5rem
+        }
+
+        .mr-4 {
+            margin-right: 1rem
+        }
+
+        .mt-5 {
+            margin-top: 1.25rem
+        }
+
+        .mr-5 {
+            margin-right: 1.25rem
+        }
+
+        .mb-5 {
+            margin-bottom: 1.25rem
+        }
+
+        .ml-5 {
+            margin-left: 1.25rem
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem
+        }
+
+        .mt-8 {
+            margin-top: 2rem
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem
+        }
+
+        .mt-10 {
+            margin-top: 2.5rem
+        }
+
+        .mt-20 {
+            margin-top: 5rem
+        }
+
+        .-ml-1 {
+            margin-left: -.25rem
+        }
+
+        .p-1 {
+            padding: .25rem
+        }
+
+        .p-2 {
+            padding: .5rem
+        }
+
+        .p-3 {
+            padding: .75rem
+        }
+
+        .p-4 {
+            padding: 1rem
+        }
+
+        .p-5 {
+            padding: 1.25rem
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem
+        }
+
+        .py-5 {
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem
+        }
+
+        .pt-2 {
+            padding-top: .5rem
+        }
+
+        .pb-40 {
+            padding-bottom: 10rem
+        }
+
+        .pointer-events-none {
+            pointer-events: none
+        }
+
+        .absolute {
+            position: absolute
+        }
+
+        .relative {
+            position: relative
+        }
+
+        .bottom-0 {
+            bottom: 0
+        }
+
+        .left-0 {
+            left: 0
+        }
+
+        .shadow {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06)
+        }
+
+        .shadow-inner {
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, .06)
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .text-white {
+            color: #fff
+        }
+
+        .text-gray-500 {
+            color: #a0aec0
+        }
+
+        .text-gray-600 {
+            color: #a2bce2
+        }
+
+        .text-gray-700 {
+            color: #ffffff
+        }
+
+        .text-red-400 {
+            color: #fc8181
+        }
+
+        .text-red-500 {
+            color: #f56565
+        }
+
+        .text-red-600 {
+            color: #e53e3e
+        }
+
+        .text-green-600 {
+            color: #38a169
+        }
+
+        .text-green-700 {
+            color: #2f855a
+        }
+
+        .hover\:text-green-500:hover {
+            color: #48bb78
+        }
+
+        .underline {
+            text-decoration: underline
+        }
+
+        .antialiased {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        .select-none {
+            user-select: none
+        }
+
+        .w-4 {
+            width: 1rem
+        }
+
+        .w-6 {
+            width: 1.5rem
+        }
+
+        .w-8 {
+            width: 2rem
+        }
+
+        .w-10 {
+            width: 2.5rem
+        }
+
+        .w-full {
+            width: 100%
+        }
+
+        .transform {
+            --transform-translate-x: 0;
+            --transform-translate-y: 0;
+            --transform-rotate: 0;
+            --transform-skew-x: 0;
+            --transform-skew-y: 0;
+            --transform-scale-x: 1;
+            --transform-scale-y: 1;
+            transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y))
+        }
+
+        .transition {
+            transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform
+        }
+
+        .ease-in-out {
+            transition-timing-function: cubic-bezier(.4, 0, .2, 1)
+        }
+
+        @media (min-width:768px) {
+            .md\:text-xl {
+                font-size: 1.25rem
+            }
+
+            .md\:text-4xl {
+                font-size: 2.25rem
+            }
+
+            .md\:mb-6 {
+                margin-bottom: 1.5rem
+            }
+
+            .md\:px-8 {
+                padding-left: 2rem;
+                padding-right: 2rem
+            }
+        }
+
+        #rootapp {
+            font-family: Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body class="antialiased leading-none" style="background-color:rgb(0, 0, 0);>
+    <div id=" rootapp">
+    <div class="container flex flex-col justify-between px-4 pb-40 mx-auto md:px-8">
+        <div class="flex flex-col flex-1">
+            <div data-v-60d9310b="" class="flex justify-between py-5 rounded-lg md:mb-6">
+                <div data-v-60d9310b="" class="flex flex-1 pt-2">
+                    <div data-v-60d9310b="" class="flex flex-col flex-1">
+                        <p data-v-60d9310b="" class="mt-2 text-2xl font-semibold text-center text-gray-600 md:text-4xl">
+                            CHECKLIST
+                            IDENTIFICAÇÃO DE AVARIAS </p><!----><!----><!---->
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li data-v-af826af0="" id="checklist1"
+                    class="flex justify-between p-5 rounded-lg bg-gray-400 mt-5 mb-8 cursor-pointer">
+                    <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                        <div data-v-af826af0="" class="flex flex-col flex-1">
+                            <p data-v-af826af0="" class="mt-2 font-semibold text-center text-gray-700 text-3xl">
+                                CHECKLIST – (1)
+                            </p>
+                            <div data-v-af826af0="" class="mt-2 text-center text-gray-700 text-xl">
+                                PROBLEMAS NO ARRANQUE</div>
+                        </div>
+                    </div>
+                </li>
+                <div id="componentes1" class="hidden">
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Geral / Inicial
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> LEDs do Power e
+                                    HDD
+                                    estão iluminados? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Se sim. O computador
+                                    arrancou.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Ouviu sinal do
+                                    speaker
+                                    ou ventoinha da fonte está a trabalhar? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Se sim. O computador
+                                    arrancou.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Tem pulseira
+                                    anti
+                                    estática? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Mexer nos componentes, é
+                                    aconselhado
+                                    usar pulseira anti estática.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Instalado algum
+                                    componente recentemente? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Se instalou ultimamente um
+                                    componente, verificar se é compatível com a Motherboard.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> O computador tem
+                                    UPS? Se
+                                    sim, está ligada e a funcionar? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Ligar o computador
+                                    diretamente à
+                                    tomada.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Computador
+                                    encontra-se
+                                    com pó no interior e exterior? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Fazer uma limpeza geral ao
+                                    computador
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Fonte de
+                                    alimentação </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Interruptor está
+                                    ligado?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Ligar interruptor.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Fusível está
+                                    intacto?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Substituir fusível.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Fonte está
+                                    danificada ou
+                                    cheira a queimado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Tentar reparar ou substituir
+                                    a fonte
+                                    de alimentação.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo da fonte de
+                                    alimentação </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Está bem
+                                    conectado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Conectar cabo.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Está danificado?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Substituir o cabo.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Está ligado à
+                                    tomada?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Ligar à tomada.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Tem corrente
+                                    elétrica?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se a tomada tem
+                                    corrente
+                                    elétrica.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Botão Power </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Botão Power
+                                    encontra-se
+                                    solto/danificado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Colocar corretamente o botão
+                                    ou
+                                    substitui-lo.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo Power SW
+                                    ligado à
+                                    motherboard? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Ligar cabo à motherboard.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo Power SW
+                                    está
+                                    danificado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Substituir o cabo.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Motherboard </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo de
+                                    alimentação da
+                                    motherboard ligado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Ligar cabo à motherboard.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo de
+                                    alimentação da
+                                    motherboard danificado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Tentar reparar o cabo ou os
+                                    pinos.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Motherboard está
+                                    danificada? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se tem pinos
+                                    dobrados,
+                                    tentar substituir condensadores ou substituir motherboard.</div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <li data-v-af826af0="" id="checklist2"
+                    class="flex justify-between p-5 rounded-lg bg-gray-400 mt-5 mb-8 cursor-pointer">
+                    <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                        <div data-v-af826af0="" class="flex flex-col flex-1">
+                            <p data-v-af826af0="" class="mt-2 font-semibold text-center text-gray-700 text-3xl">
+                                CHECKLIST – (2)
+                            </p>
+                            <div data-v-af826af0="" class="mt-2 text-center text-gray-700 text-xl">PROBLEMAS APÓS O
+                                ARRANQUE</div>
+                        </div>
+                    </div>
+                </li>
+                <div id="componentes2" class="hidden">
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Monitor </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Botão está
+                                    ligado?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Ligar no botão power.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Está ligado à
+                                    tomada?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Ligar à tomada.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Está danificado?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se está danificado
+                                    ou
+                                    tem
+                                    algum tipo de problema. Experimentar um monitor diferente.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo de vídeo
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Está danificado?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Substituir o cabo.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Está bem
+                                    conectado?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se está bem
+                                    encaixado
+                                    na
+                                    saída de vídeo do computador e na entrada do monitor.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Placa Gráfica
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Existem várias
+                                    portas de
+                                    saída de vídeo ou placas gráficas? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar noutra porta de
+                                    saída
+                                    de
+                                    vídeo.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Placa gráfica
+                                    encontra-se bem encaixada na slot? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se está bem
+                                    encaixada
+                                    na
+                                    slot.
+                                    Verificar se a slot não se encontra danificada.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Placa gráfica
+                                    necessita
+                                    de energia auxiliar? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Se sim. Verificar se energia
+                                    auxiliar
+                                    se encontra conectada.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Placa gráfica
+                                    está
+                                    danificada? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Testar com o cabo de vídeo
+                                    numa
+                                    outra
+                                    porta de saída de vídeo, por exemplo a onboard.
+                                    Substituir a placa gráfica.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> BIOS </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Surgiu algum bip
+                                    sonoro?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar qual o código do
+                                    Bip no
+                                    manual da Motherboard.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Fez reset à
+                                    CMOS?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Retirar a pilha durante algum
+                                    tempo
+                                    ou através dos jumpers, verificar no manual da Motherboard. Fazer reset irá colocar
+                                    as configurações da BIOS padrão.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Pilha CMOS
+                                    descarregada?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se a pilha CMOS
+                                    encontra-se
+                                    descarregada e caso necessário substitui-la. A CMOS contem as configurações
+                                    guardadas da BIOS.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Memória RAM </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Está bem
+                                    conectada?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se está bem
+                                    encaixada
+                                    na
+                                    slot.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Encontra-se com
+                                    pó
+                                    ou
+                                    oxidação? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Tentar limpar os pinos com
+                                    uma
+                                    borracha.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Slots da memória
+                                    danificada? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Encaixar noutra slot e
+                                    verificar
+                                    se
+                                    funciona.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Memória RAM está
+                                    danificada? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Substituir a memória RAM.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Processador </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo de
+                                    alimentação
+                                    da
+                                    CPU conectado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Conectar cabo de alimentação
+                                    à
+                                    motherboard.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo de
+                                    alimentação
+                                    da
+                                    CPU danificado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Tentar reparar o cabo ou os
+                                    pinos.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Processador está
+                                    danificado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Overclock mal feito, pasta
+                                    térmica
+                                    mal aplicada ou instalação de um cooler não eficiente, poderá levar ao
+                                    superaquecimento do CPU e danificá-lo.
+                                    Substituir o Processador.</div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <li data-v-af826af0="" id="checklist3"
+                    class="flex justify-between p-5 rounded-lg bg-gray-400 mt-5 mb-8 cursor-pointer">
+                    <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                        <div data-v-af826af0="" class="flex flex-col flex-1">
+                            <p data-v-af826af0="" class="mt-2 font-semibold text-center text-gray-700 text-3xl">
+                                CHECKLIST – (3)
+                            </p>
+                            <div data-v-af826af0="" class="mt-2 text-center text-gray-700 text-xl">PROBLEMAS ANTES DO
+                                ARRANQUE DO
+                                SISTEMA OPERATIVO (SO)</div>
+                        </div>
+                    </div>
+                </li>
+                <div id="componentes3" class="hidden">
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> BIOS </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Foi feito
+                                    alterações
+                                    na
+                                    BIOS? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Colocar as configurações por
+                                    defeito.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Disco com o SO
+                                    em
+                                    primeiro no boot? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Colocar o disco com o SO a
+                                    arrancar
+                                    primeiro no boot.
+                                    Desativar o security boot.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> O disco não é
+                                    reconhecido na BIOS? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Disco está danificado ou
+                                    cabos
+                                    não
+                                    conectados.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Disco Rígido ou
+                                    SSD </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo de
+                                    alimentação
+                                    e de
+                                    dados conectados? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se cabo de
+                                    alimentação
+                                    encontra-se conectado no disco.
+                                    Verificar se cabo de dados encontra-se conectado no disco e na Motherboard</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo(s) estão
+                                    danificado(s)? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Substituir o(s) cabo(s).
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Disco está
+                                    danificado?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Em discos rígidos um dos
+                                    sintomas
+                                    é o
+                                    ruido.
+                                    Tentar recuperar os dados com software específico.
+                                    Substituir o disco.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Periféricos /
+                                    Componentes </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Tem algum
+                                    periférico
+                                    USB
+                                    ligado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Desligar todos os
+                                    dispositivos
+                                    conectados por USB e verificar se arranca.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Removeu todos os
+                                    componentes indispensáveis? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Tente ligar o PC apenas com
+                                    os
+                                    componentes básicos conectados. Se arrancar, vá colocando um por um até verificar o
+                                    que está a causar o problema.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Teclado </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Teclado
+                                    encontra-se
+                                    conectado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se o teclado
+                                    encontra-se
+                                    conectado na porta PS/2 ou USB.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo do teclado
+                                    danificado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se o cabo
+                                    encontra-se
+                                    danificado</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Teclado ativo na
+                                    BIOS?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Colocar teclado USB como
+                                    “enabled” na
+                                    BIOS e gravar.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Sistema
+                                    Operativo </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Sistema
+                                    Operativo
+                                    está
+                                    corrompido ou não está instalado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Usar uma pendrive de arranque
+                                    e
+                                    verificar se inicia. Caso inicie, o SO provavelmente estará corrompido e é
+                                    necessário reparar ou formatar.</div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <li data-v-af826af0="" id="checklist4"
+                    class="flex justify-between p-5 rounded-lg bg-gray-400 mt-5 mb-8 cursor-pointer">
+                    <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                        <div data-v-af826af0="" class="flex flex-col flex-1">
+                            <p data-v-af826af0="" class="mt-2 font-semibold text-center text-gray-700 text-3xl">
+                                CHECKLIST – (4)
+                            </p>
+                            <div data-v-af826af0="" class="mt-2 text-center text-gray-700 text-xl">PROBLEMAS APÓS O
+                                ARRANQUE DO SISTEMA
+                                OPERATIVO (SO)</div>
+                        </div>
+                    </div>
+                </li>
+                <div id="componentes4" class="hidden">
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Disco Rígido ou
+                                    SSD </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Disco com
+                                    setores
+                                    danificados? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Se o SO ou programa recorre a
+                                    um
+                                    setor do disco danificado o SO pode bloquear ou reiniciar.
+                                    Usar um software de teste como o “CrystalDisk”</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Memória RAM </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Memória RAM com
+                                    setores
+                                    danificados? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Se o SO ou programa recorre a
+                                    um
+                                    setor de memória danificado o SO pode bloquear ou reiniciar.
+                                    Usar um software de teste como o “Diagnóstico de memória do Windows” ou o
+                                    “MemTest86+”.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Velocidade de
+                                    clock
+                                    indicada na BIOS está de acordo com as especificações da memória RAM? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Caso a motherboard suporte os
+                                    perfis
+                                    XMP, tentar usar os valores padrão, se não resultar, tentar reduzir a velocidade
+                                    abaixo do indicado.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Processador </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> CPU com
+                                    superaquecimento? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar as temperaturas do
+                                    processador com um software de teste como o “HWMonitor”</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Vírus </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Computador com
+                                    vírus?
+                                </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar com um antivírus se
+                                    o
+                                    computador tem algum tipo de vírus ou malware.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Software </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Tem conflito com
+                                    algum
+                                    software? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se algum software
+                                    causa
+                                    conflito com o sistema operativo. Desinstalar o programa em causa e procurar uma
+                                    alternativa.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Uso excessivo de
+                                    memória
+                                    ou processador? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar através do “Gestor
+                                    de
+                                    tarefas” se existe algum software a consumir muita memória ou processador.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Tentou iniciar
+                                    em
+                                    modo
+                                    de segurança? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Iniciar em modo de segurança,
+                                    permite
+                                    detetar e resolver problemas que estejam a afetar o funcionamento normal do Sistema
+                                    Operativo.</div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <li data-v-af826af0="" id="checklist5"
+                    class="flex justify-between p-5 rounded-lg bg-gray-400 mt-5 mb-8 cursor-pointer">
+                    <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                        <div data-v-af826af0="" class="flex flex-col flex-1">
+                            <p data-v-af826af0="" class="mt-2 font-semibold text-center text-gray-700 text-3xl">
+                                CHECKLIST – (5)
+                            </p>
+                            <div data-v-af826af0="" class="mt-2 text-center text-gray-700 text-xl">PROBLEMAS COM
+                                ALGUNS
+                                COMPONENTES
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <div id="componentes5" class="hidden">
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Próprio
+                                    componente </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Componente está
+                                    danificado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se o componente
+                                    encontra-se
+                                    danificado.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Componente está
+                                    mal
+                                    conectado? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se o componente
+                                    está
+                                    bem
+                                    encaixado na slot.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Cabo do
+                                    componente
+                                    não
+                                    conectado ou danificado? Ex: Drives óticas </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se o componente tem
+                                    cabo de
+                                    dados e de energia conectados e não se encontram danificados.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Motherboard </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Slot da
+                                    motherboard
+                                    danificada? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se a slot da
+                                    motherboard
+                                    onde encaixa o componente está danificada.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> O componente é
+                                    compatível com a motherboard? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Componente pode não ser
+                                    compatível
+                                    com a motherboard, neste caso não há solução senão substituí-lo por outro
+                                    compatível.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Fonte de
+                                    alimentação </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Fonte de
+                                    alimentação
+                                    tem
+                                    potência suficiente? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se a potência da
+                                    fonte
+                                    de
+                                    alimentação é a necessária para todos os componentes.
+                                    Caso necessário, trocar por uma mais potente.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> BIOS </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> O componente é
+                                    detetado
+                                    na BIOS? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Colocar as configurações por
+                                    defeito
+                                    ou verificar se estas estão configuradas corretamente para o componente em causa.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg bg-gray-100 mt-5 mb-8">
+                        <div data-v-af826af0="" class="flex flex-1"><!----><!---->
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Drivers /
+                                    Sistema Operativo </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Tem problemas
+                                    com
+                                    drivers? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar no “Gestor de
+                                    dispositivos”
+                                    se existe algum conflito com o componente.
+                                    Instalar as últimas drivers disponíveis.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-af826af0="" class="flex justify-between p-5 rounded-lg">
+                        <div data-v-af826af0="" class="flex flex-1"><svg data-v-af826af0="" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke="currentColor"
+                                viewBox="0 0 24 24" onclick="change2Inactive(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer"> &gt;
+                                <circle cx="12" cy="12" r="10" />
+                            </svg><svg data-v-af826af0="" viewBox="0 0 20 20" fill="currentColor"
+                                onclick="change2Active(this)"
+                                class="self-start w-10 mr-4 text-green-600 cursor-pointer hidden"> &gt; <path
+                                    data-v-af826af0="" fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path></svg>
+                            <div data-v-af826af0="" class="flex flex-col flex-1">
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> O SO é
+                                    compatível
+                                    com o
+                                    componente em causa? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Verificar se o SO é
+                                    compatível
+                                    com o
+                                    componente em causa. Verificar se existem algum firmware para atualizar componente.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div id="footer" class="absolute bottom-0 w-full">
+        <div class="p-4 text-center text-gray-600">Criado por Artur Rodrigues </div>
+    </div>
+    </div>
+    <script> var id = '5d21e2a4-9251-43a2-9106-20bb7712e968';
+        function change2Inactive(el) {
+            el.classList.add("hidden");
+            el = el.nextElementSibling;
+            el.classList.remove("hidden");
+            saveState();
+        }
+
+        function change2Active(el) {
+            el.classList.add("hidden");
+            el = el.previousElementSibling;
+            el.classList.remove("hidden");
+            saveState();
+        }
+
+        function saveState() {
+            var states = [];
+            var list = document.getElementsByTagName("svg");
+            var list = Array.prototype.slice.call(list);
+            list.forEach((el) => {
+                states.push(el.classList.contains("hidden"));
+            });
+            localStorage.setItem(id, JSON.stringify(states));
+        }
+
+        function readState() {
+            var states = JSON.parse(localStorage.getItem(id));
+            if (states) {
+                var list = document.getElementsByTagName("svg");
+                var list = Array.prototype.slice.call(list);
+                var cnt = 0;
+                list.forEach((el) => {
+                    if (states[cnt]) el.classList.add("hidden");
+                    else el.classList.remove("hidden");
+                    cnt++;
+                });
+            }
+        }
+
+        function changeState(el) {
+            id = el;
+            var list = document.getElementsByTagName("svg");
+            var list = Array.prototype.slice.call(list);
+            list.forEach((el) => {
+                if (el.dataset.id == id) {
+                    el.classList.add("hidden");
+                    el = document.querySelectorAll("[data-id-" + id + "]");
+                    el[0].classList.remove("hidden");
+                }
+            });
+        }
+        window.addEventListener("DOMContentLoaded", (event) => {
+            readState();
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const checklist1 = document.getElementById("checklist1");
+            const componentes1 = document.getElementById("componentes1");
+            const checklist2 = document.getElementById("checklist2");
+            const componentes2 = document.getElementById("componentes2");
+            const checklist3 = document.getElementById("checklist3");
+            const componentes3 = document.getElementById("componentes3");
+            const checklist4 = document.getElementById("checklist4");
+            const componentes4 = document.getElementById("componentes4");
+            const checklist5 = document.getElementById("checklist5");
+            const componentes5 = document.getElementById("componentes5");
+
+            checklist1.addEventListener("click", function () {
+                componentes1.classList.toggle("hidden");
+            });
+
+            checklist2.addEventListener("click", function () {
+                componentes2.classList.toggle("hidden");
+            });
+
+            checklist3.addEventListener("click", function () {
+                componentes3.classList.toggle("hidden");
+            });
+
+            checklist4.addEventListener("click", function () {
+                componentes4.classList.toggle("hidden");
+            });
+
+            checklist5.addEventListener("click", function () {
+                componentes5.classList.toggle("hidden");
+            });
+        });
+    </script>
+</body>
+
+</html>
