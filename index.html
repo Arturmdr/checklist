@@ -703,11 +703,10 @@
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                     clip-rule="evenodd"></path></svg>
                             <div data-v-af826af0="" class="flex flex-col flex-1">
-                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> LEDs do Power e
-                                    HDD
-                                    estão iluminados? </p>
-                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Se sim. O computador
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl cursor-pointer" onclick="mostrarImagem('imagem')"> LEDs do Power e HDD estão iluminados? </p>
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm cursor-pointer" onclick="mostrarImagem('imagem')">Se sim. O computador
                                     arrancou.</div>
+                                    <img id="imagem" src="Image/power.jpg" style="display: none; width: 50%;" onclick="ocultarImagem('imagem')">
                             </div>
                         </div>
                     </li>
@@ -724,11 +723,12 @@
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                     clip-rule="evenodd"></path></svg>
                             <div data-v-af826af0="" class="flex flex-col flex-1">
-                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Ouviu sinal do
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl cursor-pointer" onclick="mostrarImagem('imagem1')"> Ouviu sinal do
                                     speaker
                                     ou ventoinha da fonte está a trabalhar? </p>
-                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Se sim. O computador
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm cursor-pointer" onclick="mostrarImagem('imagem1')">Se sim. O computador
                                     arrancou.</div>
+                                    <img id="imagem1" src="Image/ventoinha.png" style="display: none; width: 50%;" onclick="ocultarImagem('imagem1')">
                             </div>
                         </div>
                     </li>
@@ -745,12 +745,13 @@
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                     clip-rule="evenodd"></path></svg>
                             <div data-v-af826af0="" class="flex flex-col flex-1">
-                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Tem pulseira
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl cursor-pointer" onclick="mostrarImagem('imagem2')"> Tem pulseira
                                     anti
                                     estática? </p>
-                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Mexer nos componentes, é
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm cursor-pointer" onclick="mostrarImagem('imagem2')">Mexer nos componentes, é
                                     aconselhado
                                     usar pulseira anti estática.</div>
+                                    <img id="imagem2" src="Image/pulseira.jpg" style="display: none; width: 50%;" onclick="ocultarImagem('imagem2')">
                             </div>
                         </div>
                     </li>
@@ -767,10 +768,11 @@
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                     clip-rule="evenodd"></path></svg>
                             <div data-v-af826af0="" class="flex flex-col flex-1">
-                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl"> Instalado algum
+                                <p data-v-af826af0="" class="mt-2 font-semibold text-gray-700 text-xl cursor-pointer" onclick="mostrarImagem('imagem3')"> Instalado algum
                                     componente recentemente? </p>
-                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm">Se instalou ultimamente um
+                                <div data-v-af826af0="" class="mt-2 text-gray-700 text-sm cursor-pointer" onclick="mostrarImagem('imagem3')">Se instalou ultimamente um
                                     componente, verificar se é compatível com a Motherboard.</div>
+                                    <img id="imagem3" src="Image/componentes.jpg" style="display: none; width: 50%;" onclick="ocultarImagem('imagem3')">
                             </div>
                         </div>
                     </li>
@@ -2533,6 +2535,20 @@
                 componentes5.classList.toggle("hidden");
             });
         });
+
+        function mostrarImagem(id) {
+  var imagem = document.getElementById(id);
+  if (imagem.style.display === "none") {
+    imagem.style.display = "block";
+  } else {
+    imagem.style.display = "none";
+  }
+}
+
+function ocultarImagem(id) {
+  document.getElementById(id).style.display = "none";
+}
+
     </script>
 </body>
 
